@@ -4,7 +4,34 @@
 An intelligent, AI-powered health advisory platform that predicts potential disease risks, offers AI-generated health recommendations, monitors real-time air quality, and interacts through a voice-enabled chatbot — all inside a beautifully animated, modern dashboard.
 
 ## 📸 Demo Preview:
-🚀 **Coming Soon:** Animated screenshots & live demo link
+
+![Screenshot 2025-06-13 092137](https://github.com/user-attachments/assets/0a080210-b1e7-4c3b-99e8-88a6a72dc620)
+
+![Screenshot 2025-06-13 092241](https://github.com/user-attachments/assets/52cbb95a-dbe8-4983-87f7-ac65133a7458)
+
+![Screenshot 2025-06-13 092309](https://github.com/user-attachments/assets/935c3811-a602-4d42-8c60-31491a45aedd)
+
+![Screenshot 2025-06-13 092411](https://github.com/user-attachments/assets/b88a9f17-fe0a-4429-93c3-3fa9c02d2e0c)
+
+![Screenshot 2025-06-13 092427](https://github.com/user-attachments/assets/52e19b20-3dfb-4b39-bfff-7fe239e6391b)
+
+![Screenshot 2025-06-13 092437](https://github.com/user-attachments/assets/3dc4cc53-b6b8-4cef-abcf-4ee3acbdac22)
+
+![Screenshot 2025-06-13 092447](https://github.com/user-attachments/assets/6d2bcf65-2308-47c9-8c1b-ce5ac344b7ac)
+
+![Screenshot 2025-06-13 092457](https://github.com/user-attachments/assets/bace1c38-04b2-4737-9a23-4eeceb13d467)
+
+![Screenshot 2025-06-13 092505](https://github.com/user-attachments/assets/aa2b9d12-7066-47b6-9c16-2f36c7fa6b40)
+
+![Screenshot 2025-06-13 092319](https://github.com/user-attachments/assets/61915f08-179a-417d-b7f1-48d481878375)
+
+![Screenshot 2025-06-13 092327](https://github.com/user-attachments/assets/b78c9ca7-5a81-4531-a695-872d605b684b)
+
+![Screenshot 2025-06-13 092337](https://github.com/user-attachments/assets/e9df7d15-1892-4384-9f03-042503063d58)
+
+![Screenshot 2025-06-13 092347](https://github.com/user-attachments/assets/78e98352-c3e5-46a9-90bd-37deaacfb197)
+
+![Screenshot 2025-06-13 092354](https://github.com/user-attachments/assets/a2f72567-b74d-4d16-82a4-1fbfbc43d10b)
 
 ## 📊 Key Features:
 
@@ -79,6 +106,8 @@ npm start
 - 📦 Deployable PWA (Progressive Web App) version  
 - 📱 Android/iOS App with React Native
 
+
+## 🙌 Contribution:
 Contributions, ideas, and suggestions are always welcome!  
 Feel free to check the [issues page](https://github.com/StrimCoder/Dr.Aarogya Ai/issues) or submit a pull request.
 
