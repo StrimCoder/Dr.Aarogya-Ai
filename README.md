@@ -109,11 +109,12 @@ npm start
 
 ## 🙌 Contribution:
 Contributions, ideas, and suggestions are always welcome!  
-Feel free to check the [issues page](https://github.com/StrimCoder/Dr.Aarogya Ai/issues) or submit a pull request.
+Feel free to check the [issues page](https://github.com/StrimCoder/Dr.Aarogya-Ai/issues) or submit a pull request.
 
 ## 👨‍⚕️ Created By:
 **Bhushan Navsagar** ✨  
 _AI/ML Developer & HealthTech Innovator_
+
 [GitHub](https://github.com/StrimCoder) | [LinkedIn](https://www.linkedin.com/in/bhushan-navsagar-2b683a293/)
 
 ## 📌 License:
