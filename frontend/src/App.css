@@ -1,0 +1,791 @@
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 152, 219, 0.9) 100%);
+  color: white;
+  position: fixed;
+  width: calc(100% - 4rem);
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+}
+
+.navbar:hover {
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.98) 0%, rgba(52, 152, 219, 0.95) 100%);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: linear-gradient(45deg, #fff, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+.pulse-icon {
+  color: #e74c3c;
+  margin-right: 10px;
+  animation: pulse 2s infinite;
+  filter: drop-shadow(0 0 5px rgba(231, 76, 60, 0.7));
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #3498db;
+  text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  background-color: #3498db;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.nav-links a i {
+  margin-right: 5px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover i {
+  transform: translateY(-2px);
+}
+
+.highlight {
+  color: #3498db;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(52, 152, 219, 0.8);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  min-height: 700px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding-top: 80px;
+  margin-top: 0;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: slideInUp 1s ease-out;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  animation: slideInUp 1s ease-out 0.3s;
+  animation-fill-mode: both;
+}
+
+.cta-button {
+  padding: 15px 35px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+  animation: slideInUp 1s ease-out 0.6s;
+  animation-fill-mode: both;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+}
+
+/* Services Section */
+.services {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+}
+
+.services h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: slideInUp 0.8s forwards;
+  animation-delay: calc(0.2s * var(--i, 1));
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.clickable {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.clickable::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to top, rgba(52, 152, 219, 0.1), transparent);
+  transition: height 0.3s ease;
+  z-index: 0;
+}
+
+.clickable:hover::after {
+  height: 100%;
+}
+
+.medical-imaging-card.clickable::after {
+  background: linear-gradient(to top, rgba(155, 89, 182, 0.1), transparent);
+}
+
+.service-card .service-icon, 
+.service-card h3, 
+.service-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #3498db;
+  transition: all 0.3s ease;
+}
+
+.medical-imaging-card .service-icon {
+  color: #9b59b6;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.chatbot-card {
+  border-top: 4px solid #3498db;
+}
+
+.medical-imaging-card {
+  border-top: 4px solid #9b59b6;
+}
+
+/* About Section */
+.about {
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: white;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+}
+
+.about h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vision-container {
+  margin-bottom: 5rem;
+}
+
+.vision-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  text-align: left;
+}
+
+.vision-text {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInUp 1s forwards;
+  animation-delay: 0.2s;
+}
+
+.vision-text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #34495e;
+}
+
+.vision-image {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  background-image: url('https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInUp 1s forwards;
+  animation-delay: 0.4s;
+}
+
+.experts-heading {
+  margin-top: 2rem;
+}
+
+.about-intro {
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.doctors-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.doctor-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: slideInUp 0.8s forwards;
+  animation-delay: calc(0.2s * var(--i, 1));
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  background-size: cover;
+  background-position: center;
+  border: 5px solid #f5f5f5;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.doctor-1 {
+  background-image: url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+  animation-delay: 0s;
+}
+
+.doctor-2 {
+  background-image: url('https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+  animation-delay: 2s;
+}
+
+.doctor-3 {
+  background-image: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+  animation-delay: 4s;
+}
+
+.doctor-card h3 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.specialty {
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Hospitals Section */
+.hospitals {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #e0e0e0, #f5f5f5);
+}
+
+.hospitals h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+}
+
+.hospitals h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hospitals-intro {
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.hospitals-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hospital-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 0 0 2rem;
+  width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  animation: slideInUp 0.8s forwards;
+  animation-delay: calc(0.2s * var(--i, 1));
+}
+
+.hospital-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.hospital-img {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s;
+}
+
+.hospital-card:hover .hospital-img {
+  transform: scale(1.05);
+}
+
+.hospital-1 {
+  background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+}
+
+.hospital-2 {
+  background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+}
+
+.hospital-3 {
+  background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+}
+
+.hospital-card h3 {
+  margin: 1.5rem 0 0.5rem;
+  color: #2c3e50;
+  padding: 0 1.5rem;
+}
+
+.hospital-card p {
+  padding: 0 1.5rem;
+}
+
+.location {
+  color: #3498db;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 6rem 2rem;
+  background-color: white;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact h2::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  gap: 2rem;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  background-color: #f5f5f5;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: slideInUp 0.8s forwards;
+  animation-delay: 0.2s;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  color: #34495e;
+}
+
+.contact-hours {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.contact-hours h4 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  opacity: 0;
+  animation: slideInUp 0.8s forwards;
+  animation-delay: 0.4s;
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #9b59b6, #3498db);
+  background-size: 200% 100%;
+  animation: gradientMove 3s linear infinite;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #fff, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #3498db;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.5);
+}
+
+.copyright {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .vision-text, .vision-image {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-info, .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Add animation delays to cards */
+.service-card:nth-child(1) { --i: 1; }
+.service-card:nth-child(2) { --i: 2; }
+.service-card:nth-child(3) { --i: 3; }
+.service-card:nth-child(4) { --i: 4; }
+
+.doctor-card:nth-child(1) { --i: 1; }
+.doctor-card:nth-child(2) { --i: 2; }
+.doctor-card:nth-child(3) { --i: 3; }
+
+.hospital-card:nth-child(1) { --i: 1; }
+.hospital-card:nth-child(2) { --i: 2; }
+.hospital-card:nth-child(3) { --i: 3; }
